@@ -1,1 +1,2 @@
-python3 src/main.py
+#!/bin/bash
+python3 -m py_static_gen.main

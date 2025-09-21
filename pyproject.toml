@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py_static_gen"
+version = "0.1.0"
+description = "Static site generator in Python"
+authors = [{ name = "Lucas G. Janot" }]
+requires-python = ">=3.7"
+dependencies = []
+
+[project.scripts]
+py_static_gen = "py_static_gen.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
