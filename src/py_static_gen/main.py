@@ -1,26 +1,25 @@
-from py_static_gen.textnode import TextType, TextNode
-import shutil
 import os
+import shutil
 
-def copy_delete_content(src, dest):
-    shutil.rmtree(dest)
+from py_static_gen.copystatic import copy_files_recursive
+from py_static_gen.generatepage import generate_pages_recursive
 
-    for item in os.listdir(src):
-        caminho_origem = os.path.join(src, item)
-        caminho_destino = os.path.join(dest, item)
-
-        if os.path.isdir(caminho_origem):
-            shutil.copytree(caminho_origem, caminho_destino, dirs_exist_ok=True)
-        else:
-            shutil.copy2(caminho_origem, caminho_destino)
-
-
-
+dir_path_static = "./static"
+dir_path_public = "./public"
+dir_path_content = "./content"
+template_path = "./template.html"
 
 
 def main():
-    copy_delete_content("./static", "./public")
+    print("Deleting public directory...")
+    if os.path.exists(dir_path_public):
+        shutil.rmtree(dir_path_public)
 
+    print("Copying static files to public directory...")
+    copy_files_recursive(dir_path_static, dir_path_public)
+
+    print("Generating content...")
+    generate_pages_recursive(dir_path_content, template_path, dir_path_public)
 
 if __name__ == "__main__":
     main()
