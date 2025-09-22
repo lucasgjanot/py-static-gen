@@ -21,3 +21,6 @@ class TestLeafNode(unittest.TestCase):
     def test_to_html_no_tag(self):
         leaf=LeafNode(None, "This is a paragraph of text.")
         self.assertEqual(leaf.to_html(), "This is a paragraph of text.")
+
+if __name__ == "__main__":
+    unittest.main()

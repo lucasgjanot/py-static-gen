@@ -54,3 +54,7 @@ class TestNodeConverter(unittest.TestCase):
             text_node_to_html_node(invalid_node)
 
         self.assertIn("invalid text type", str(cm.exception))
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -11,3 +11,5 @@ class TestHTMLNode(unittest.TestCase):
         node = HTMLNode("h1","Teste")
         self.assertEqual(repr(node), "HTMLNode(h1, Teste, children: None, None)")
         
+if __name__ == "__main__":
+    unittest.main()

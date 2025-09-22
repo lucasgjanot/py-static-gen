@@ -52,3 +52,6 @@ class TestParentNode(unittest.TestCase):
             outer_parent.to_html(),
             "<div><p><i>italic</i><u>underline</u></p></div>"
         )
+
+if __name__ == "__main__":
+    unittest.main()
