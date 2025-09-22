@@ -1,0 +1,1 @@
+python3 src/py_static_gen/main.py "/py-static-gen/"
