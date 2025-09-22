@@ -8,7 +8,9 @@ version = "0.1.0"
 description = "Static site generator in Python"
 authors = [{ name = "Lucas G. Janot" }]
 requires-python = ">=3.7"
-dependencies = []
+dependencies = [
+    "pytest>=7.4.4",
+]
 
 [project.scripts]
 py_static_gen = "py_static_gen.main:main"
