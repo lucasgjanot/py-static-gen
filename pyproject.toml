@@ -1,23 +1,23 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "py_static_gen"
 version = "0.1.0"
-description = "Static site generator in Python"
-authors = [{ name = "Lucas G. Janot" }]
-requires-python = ">=3.7"
-dependencies = [
-    "pytest>=7.4.4",
+description = "Boot.dev Project - Python Static Site Generator"
+readme = "README.md"
+authors = [
+    { name = "lucasgjanot", email = "lgjanot402@gmail.com" }
 ]
+requires-python = ">=3.11"
+dependencies = []
 
 [project.scripts]
-py_static_gen = "py_static_gen.main:main"
+pystatic = "pystatic.main:main"
 
-[tool.setuptools]
-package-dir = {"" = "src"}
+[build-system]
+requires = ["uv_build>=0.8.17,<0.9.0"]
+build-backend = "uv_build"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+]
 
